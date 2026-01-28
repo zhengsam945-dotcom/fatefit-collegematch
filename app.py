@@ -18,8 +18,6 @@ def sanitize_ascii_punct(s: str) -> str:
              .replace("”", '"')
              .replace("—", "-"))
 
-prompt = sanitize_ascii_punct(prompt)
-
 def sun_sign(d: date) -> str:
     """Return Western sun sign name from date."""
     m, day = d.month, d.day
