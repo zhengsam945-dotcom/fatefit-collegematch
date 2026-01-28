@@ -206,7 +206,6 @@ if generate:
     school_list = [x.strip() for x in school_list_raw.splitlines() if x.strip()]
 
     user_payload = {
-        "Goal": goal,
         "Birthdate": str(d),
         "Birth_time": birth_time.strip() if birth_time.strip() else "Not provided",
         "Birth_place": birth_place.strip() if birth_place.strip() else "Not provided",
