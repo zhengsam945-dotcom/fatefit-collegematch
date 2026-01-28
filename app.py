@@ -234,6 +234,7 @@ if generate:
     }
 
     prompt = build_prompt(user_payload)
+    prompt = sanitize_ascii_punct(prompt)
 
     client = OpenAI(api_key=api_key, base_url=base_url, default_headers=extra_headers)
     with st.spinner("🔮 正在推演你的选校结果..."):
