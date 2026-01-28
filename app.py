@@ -126,7 +126,7 @@ If School_list is empty:
 # ---------------------------
 st.set_page_config(page_title="FateFit AI选校顾问", layout="wide")
 st.title("🔮FateFit AI选校顾问")
-st.caption("不用数据库：你输入信息 → 一键生成“好玩但相对靠谱”的选校建议报告（玄学 + 理性双通道）。")
+st.caption("你输入信息 → 一键生成“好玩但相对靠谱”的选校建议报告（玄学 + 理性双通道）。")
 
 with st.sidebar:
     st.header("🔌 Provider / API Key")
@@ -178,8 +178,6 @@ with colA:
 
 with colB:
     st.subheader("🏫 选校任务")
-    goal = st.selectbox("你要解决的问题", ["选校", "选城市", "选专业方向", "转学定位与策略"], index=0)
-
     major_interest = st.text_input("你的兴趣方向（可选）", placeholder="例如：sociology / public health / engineering / research")
     constraints = st.text_area("硬约束（可选）", height=110,
                               placeholder="例如：预算、地理范围、是否需要奖学金、是否必须大城市、想避开什么氛围…")
@@ -233,7 +231,7 @@ if generate:
     prompt = build_prompt(user_payload)
 
     client = OpenAI(api_key=api_key, base_url=base_url, default_headers=extra_headers)
-    with st.spinner("生成中…"):
+    with st.spinner("🔮 正在推演你的选校结果..."):
         resp = client.responses.create(
             model=model,
             input=prompt
