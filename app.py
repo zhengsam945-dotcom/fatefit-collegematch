@@ -102,7 +102,7 @@ If School_list is non-empty:
 - Output exactly N mini-reviews where N = len(School_list).
 - Each mini-review MUST follow this exact template:
 
-### {{rank}}. {{school_name}} — {{score}}/100
+### {{rank}}. {{school_name}} - {{score}}/100
 - 玄学理由：...
 - 理性理由：...
 
