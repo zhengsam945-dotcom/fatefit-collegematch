@@ -102,7 +102,7 @@ If School_list is non-empty:
 - Output exactly N mini-reviews where N = len(School_list).
 - Each mini-review MUST follow this exact template:
 
-### {rank}. {school_name} — {score}/100
+### {{rank}}. {{school_name}} — {{score}}/100
 - 玄学理由：...
 - 理性理由：...
 
@@ -147,7 +147,7 @@ with st.sidebar:
     elif provider == "Groq":
         api_key = st.text_input("Groq API Key", type="password")
         base_url = "https://api.groq.com/openai/v1"
-        model = st.text_input("Model", value="llama-3.1-70b-versatile")
+        model = st.text_input("Model", value="llama-3.3-70b-versatile")
         extra_headers = {}
 
     else:  # OpenAI
@@ -180,7 +180,7 @@ with colB:
     st.subheader("🏫 选校任务")
     goal = st.selectbox("你要解决的问题", ["选校", "选城市", "选专业方向", "转学定位与策略"], index=0)
 
-    major_interest = st.text_input("你的兴趣方向（可选）", placeholder="例如：medical sociology / public health / policy / consulting")
+    major_interest = st.text_input("你的兴趣方向（可选）", placeholder="例如：sociology / public health / engineering / research")
     constraints = st.text_area("硬约束（可选）", height=110,
                               placeholder="例如：预算、地理范围、是否需要奖学金、是否必须大城市、想避开什么氛围…")
 
